@@ -4,75 +4,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bruno Decarnoncle | Senior .NET Developer</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; }
+    /* Fade up animation */
     .fade-up { opacity: 0; transform: translateY(20px); animation: fadeUp 1s forwards; }
-    .fade-up-delay { opacity: 0; transform: translateY(20px); animation: fadeUp 1s forwards; animation-delay: 0.3s; }
+    .fade-delay { animation-delay: 0.3s; }
     @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body class="bg-white text-gray-900">
 
-  <!-- Hero Section -->
-  <section class="flex flex-col items-center justify-center text-center py-32 bg-white">
-    <img src="square-face-transparent.png" alt="Bruno Decarnoncle" class="w-32 h-32 rounded-full shadow-lg mb-6 fade-up">
-    <h1 class="text-5xl font-bold mb-2 fade-up-delay">Bruno Decarnoncle</h1>
-    <p class="text-xl text-gray-600 mb-6 fade-up-delay">Senior .NET Developer | Thriving in Large Projects & ERP Solutions</p>
-    <a href="https://www.linkedin.com/in/bruno-decarnoncle" class="px-8 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 transition shadow-lg fade-up-delay">Connect on LinkedIn</a>
+  <!-- Hero -->
+  <section class="flex flex-col items-center justify-center text-center py-20 px-4 bg-white">
+    <img src="square-face-transparent.png" alt="Bruno Decarnoncle" class="w-40 h-40 rounded-full shadow-xl mb-6 object-cover">
+    <h1 class="text-4xl md:text-5xl font-bold mb-2">Bruno Decarnoncle</h1>
+    <p class="text-xl text-gray-600 mb-6">Senior .NET Developer | Thriving in Large Projects & ERP Solutions</p>
+    <a href="https://www.linkedin.com/in/bruno-decarnoncle" class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 transition shadow">Connect on LinkedIn</a>
   </section>
 
-  <!-- Skills Section -->
-  <section class="py-24 bg-gray-50 text-center">
-    <h2 class="text-3xl font-bold mb-12 fade-up">What I Bring</h2>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-      <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition fade-up">Custom Software</div>
-      <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition fade-up">C# & .NET</div>
-      <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition fade-up">Transact-SQL (T-SQL)</div>
-      <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition fade-up">ERP Development</div>
-      <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition fade-up">Debugging & Deep-Dive Problem Solving</div>
+  <!-- Skills -->
+  <section class="py-20 bg-gray-50 text-center">
+    <h2 class="text-3xl font-bold mb-12">What I Bring</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-2xl transition">Custom Software</div>
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-2xl transition">C# & .NET</div>
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-2xl transition">Transact-SQL (T-SQL)</div>
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-2xl transition">ERP Development</div>
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-2xl transition">Debugging & Deep-Dive Problem Solving</div>
     </div>
   </section>
 
-  <!-- Experience Highlights -->
-  <section class="py-24 text-center">
-    <h2 class="text-3xl font-bold mb-12 fade-up">Experience Highlights</h2>
-    <ul class="space-y-6 max-w-3xl mx-auto text-lg text-gray-700">
-      <li class="fade-up">• Optimized large-scale ERP systems for education & legal sectors</li>
-      <li class="fade-up">• Improved performance & data workflows for high-volume websites</li>
-      <li class="fade-up">• Trained LLM models to enhance programming capabilities</li>
-      <li class="fade-up">• Designed user-centric interfaces & seamless workflows</li>
-      <li class="fade-up">• Delivered clean, maintainable solutions in complex codebases</li>
+  <!-- Experience -->
+  <section class="py-20 text-center">
+    <h2 class="text-3xl font-bold mb-12">Experience Highlights</h2>
+    <ul class="space-y-4 max-w-3xl mx-auto text-lg text-gray-700">
+      <li>• Optimized large-scale ERP systems for education & legal sectors</li>
+      <li>• Improved performance & data workflows for high-volume websites</li>
+      <li>• Trained LLM models to enhance programming capabilities</li>
+      <li>• Designed user-centric interfaces & seamless workflows</li>
+      <li>• Delivered clean, maintainable solutions in complex codebases</li>
     </ul>
   </section>
 
-  <!-- Why Teams Value My Work -->
-  <section class="py-24 bg-gray-50 text-center">
-    <h2 class="text-3xl font-bold mb-12 fade-up">Why Teams Value My Work</h2>
-    <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 text-left">
-      <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition fade-up">
+  <!-- Why Teams Value Me -->
+  <section class="py-20 bg-gray-50 text-center">
+    <h2 class="text-3xl font-bold mb-12">Why Teams Value My Work</h2>
+    <div class="max-w-4xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-2xl transition">
         <h3 class="font-semibold mb-2">Clear Communication</h3>
         <p>Keeping collaboration simple, aligned, and effective.</p>
       </div>
-      <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition fade-up">
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-2xl transition">
         <h3 class="font-semibold mb-2">Ownership</h3>
         <p>Takes responsibility for complex code while staying in sync with team goals.</p>
       </div>
-      <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition fade-up">
+      <div class="p-6 bg-white rounded-xl shadow hover:shadow-2xl transition">
         <h3 class="font-semibold mb-2">Practical Solutions</h3>
         <p>Delivers results that are clean, maintainable, and aligned with business objectives.</p>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section class="py-24 text-center">
-    <h2 class="text-3xl font-bold mb-6 fade-up">Ready to Move Your Project Forward?</h2>
-    <p class="text-gray-700 mb-6 fade-up">Looking for an experienced .NET developer who can handle complexity and deliver reliable solutions? Let's connect!</p>
-    <a href="https://www.linkedin.com/in/bruno-decarnoncle" class="px-8 py-4 bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 transition shadow-lg fade-up">Connect on LinkedIn</a>
+  <!-- Contact -->
+  <section class="py-20 text-center">
+    <h2 class="text-3xl font-bold mb-6">Ready to Move Your Project Forward?</h2>
+    <p class="text-gray-700 mb-6">Looking for an experienced .NET developer who can handle complexity and deliver reliable solutions? Let's connect!</p>
+    <a href="https://www.linkedin.com/in/bruno-decarnoncle" class="px-8 py-4 bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 transition shadow">Connect on LinkedIn</a>
   </section>
 
   <!-- Footer -->
