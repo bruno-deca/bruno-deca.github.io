@@ -79,6 +79,26 @@
       border-radius: 18px;
     }
 
+    /* ===== NEW: FLOATING SECTION PANEL STYLE ===== */
+    .section-glass {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.07);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 8px 30px rgba(2,6,23,0.5);
+      border-radius: 18px;
+      /* Padding for content inside */
+      padding: clamp(2rem, 5vw, 3rem);
+      /* Margin to create "floating" space */
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+    /* Add horizontal padding to the main container */
+    main .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    
     /* subtle noise overlay */
     .noise {
       position:absolute; inset:0;
@@ -125,7 +145,7 @@
     .reveal { opacity:0; transform: translateY(22px) scale(.995); transition: all .8s cubic-bezier(.2,.9,.2,1); }
     .reveal.visible { opacity:1; transform:none; }
 
-    /* cards */
+    /* cards (for inside sections) */
     .card {
       background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
       border:1px solid rgba(255,255,255,0.06);
@@ -173,12 +193,13 @@
     }
     .timeline-dot {
       position: absolute;
-      left: -9px; /* (dot width / 2) - (border width / 2) approx */
+      left: -9px;
       top: 4px;
       width: 18px;
       height: 18px;
       background: var(--accent2);
-      border: 3px solid #0f1724; /* match body bg */
+      /* Use a dark bg for contrast */
+      border: 3px solid rgba(20,28,48,0.8); 
       border-radius: 99px;
       box-shadow: 0 0 12px rgba(6, 182, 212, 0.5);
     }
@@ -209,6 +230,7 @@
     @media (max-width:768px){
       .tilt:hover{ transform:none; box-shadow: 0 10px 30px rgba(2,6,23,0.4); }
       .glass{ padding:1.5rem 1rem }
+      .section-glass { padding: 1.5rem 1rem; }
     }
   </style>
 </head>
@@ -231,7 +253,7 @@
             </h1>
 
             <p class="text-lg max-w-xl text-indigo-100/90 mb-8">
-              With 10+ years of experience, I'm a developer you can count on. I thrive in complex .NET environments by first understanding the business needs, then delivering clean, practical solutions that scale.
+              With 10+ years of experience, I'm a developer **you can count on**. I thrive in complex .NET environments by first **understanding the business needs**, then delivering clean, practical solutions that scale.
             </p>
 
             <div class="flex items-center gap-6">
@@ -270,194 +292,198 @@
   <div class="diag" aria-hidden="true"></div>
 
   <main>
+    <div class="container max-w-6xl mx-auto">
 
-    <section class="py-24 px-6 max-w-6xl mx-auto">
-      <div class="reveal text-center">
-        <h2 class="section text-white text-center mb-4">Proven Impact</h2>
-        <p class="text-center text-indigo-200 max-w-2xl mx-auto mb-16">I build systems that serve thousands and last for years.</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8 text-center">
-        <div class="reveal" style="transition-delay:.1s">
-          <div class="stat-number">10+</div>
-          <p classs="text-lg text-indigo-200 font-semibold mt-2">Years of Experience</p>
-          <p class="text-sm text-indigo-300/80">Tackling challenging projects of all sizes.</p>
-        </div>
-        <div class="reveal" style="transition-delay:.2s">
-          <div class="stat-number">24k</div>
-          <p class="text-lg text-indigo-200 font-semibold mt-2">Global ERP Users</p>
-          <p class="text-sm text-indigo-300/80">Supported a system at Watchtower.</p>
-        </div>
-        <div class="reveal" style="transition-delay:.3s">
-          <div class="stat-number">10k+</div>
-          <p class="text-lg text-indigo-200 font-semibold mt-2">Legal Professionals</p>
-          <p class="text-sm text-indigo-300/80">Used the ERP built at Wolters Kluwer.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-24 px-6 max-w-6xl mx-auto bg-gradient-to-b from-transparent to-black/5 rounded-2xl">
-      <div class="reveal">
-        <h2 class="section text-white text-center mb-4">Core Expertise</h2>
-        <p class="text-center text-indigo-200 max-w-2xl mx-auto mb-10">I deliver practical engineering that balances long-term quality with immediate business impact.</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <article class="card reveal tilt" style="transition-delay:.1s">
-          <h3 class="text-xl font-bold text-white mb-2">Enterprise .NET Development</h3>
-          <p class="text-sm text-indigo-200">Deep experience with C#, ASP.NET Core, and the .NET ecosystem. Building and optimizing large-scale APIs, server applications, and UIs.</p>
-        </article>
-
-        <article class="card reveal tilt" style="transition-delay:.2s">
-          <h3 class="text-xl font-bold text-white mb-2">Complex ERP & Legacy Systems</h3>
-          <p class="text-sm text-indigo-200">My specialty. I excel at navigating, debugging, and modernizing large, mission-critical codebases (ERP, DMS, Accounting) without breaking workflows.</p>
-        </article>
-
-        <article class="card reveal tilt" style="transition-delay:.3s">
-          <h3 class="text-xl font-bold text-white mb-2">Database & Performance</h3>
-          <p class="text-sm text-indigo-200">Expert in T-SQL and Microsoft SQL Server. I design robust data models, optimize complex queries, and tune performance for high-volume systems.</p>
-        </article>
-      </div>
-    </section>
-
-
-    <section class="py-24 px-6">
-      <div class="max-w-6xl mx-auto reveal">
-        <h2 class="section text-white text-center mb-4">What My Colleagues Say</h2>
-        <p class="text-center text-indigo-200 max-w-2xl mx-auto mb-10">Real feedback from managers, peers, and stakeholders.</p>
-
-        <div class="grid md:grid-cols-2 gap-6">
-          <blockquote class="glass reveal p-8" style="transition-delay:.1s">
-            <p class="text-indigo-100 mb-6 italic">"I worked with Bruno on very large projects with millions of users. Not only was he very good at the job on a technical level, but he was also a pleasure to work with. He's customer-centric and shows great empathy. I'm sure he'll make any project a success!"</p>
-            <footer class="font-semibold text-white">
-              Justin Frébault
-              <span class="block text-sm font-normal text-indigo-300">Boutique Data Consultant</span>
-            </footer>
-          </blockquote>
-
-          <blockquote class="glass reveal p-8" style="transition-delay:.2s">
-            <p class="text-indigo-100 mb-6 italic">"Bruno is the kind of collaborator you can count on. His technical skills are indisputable, but his human qualities make him invaluable. He always studies subjects deeply and is great at putting himself in the client’s shoes to ensure their satisfaction. I would recommend him to anyone!"</p>
-            <footer class="font-semibold text-white">
-              Stéphane Henry
-              <span class="block text-sm font-normal text-indigo-300">Chief Technology Officer</span>
-            </footer>
-          </blockquote>
-
-          <blockquote class="glass reveal p-8" style="transition-delay:.3s">
-            <p class="text-indigo-100 mb-6 italic">"Bruno perfectly masters his development and design skills and is curious to understand the business. To be a technical expert who is also curious about the business is precious because it is rare... He has exceptional interpersonal skills, works well alone or in a team, and shares his knowledge. An outstanding collaborator whom I recommend without any reservation."</p>
-            <footer class="font-semibold text-white">
-              Isabelle Geneste
-              <span class="block text-sm font-normal text-indigo-300">CEO & Founder</span>
-            </footer>
-          </blockquote>
-
-          <blockquote class="glass reveal p-8" style="transition-delay:.4s">
-            <p class="text-indigo-100 mb-6 italic">"Bruno is serious, makes quality code, and communicates very well. He thrives in both technical and human aspects. The collaboration was excellent. I hope we will have the opportunity to work together again!"</p>
-            <footer class="font-semibold text-white">
-              Florian Alleaume
-              <span class="block text-sm font-normal text-indigo-300">Project Management Team Lead</span>
-            </footer>
-          </blockquote>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-24 px-6 bg-gradient-to-b from-transparent to-black/5">
-      <div class="max-w-4xl mx-auto reveal">
-        <h2 class="section text-white text-center mb-12">Career & Technology</h2>
-        
-        <div class="mb-20">
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <h4 class="text-xl font-extrabold text-white">Senior .NET Developer</h4>
-            <p class="text-sm font-semibold text-indigo-300 mb-2">Self-Employed (Apr 2022 - Present)</p>
-            <p class="text-sm text-indigo-200">Developed and optimized a large-scale e-parts website using ASP.NET MVC, .NET Core, and Vue.js. Focused on performance, complex authorization, and API enhancements.</p>
+      <section>
+        <div class="section-glass reveal">
+          <div class="text-center">
+            <h2 class="section text-white text-center mb-4">Proven Impact</h2>
+            <p class="text-center text-indigo-200 max-w-2xl mx-auto mb-10">I build systems that serve thousands and last for years.</p>
           </div>
 
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <h4 class="text-xl font-extrabold text-white">Senior .NET Developer</h4>
-            <p class="text-sm font-semibold text-indigo-300 mb-2">aimaira (May 2018 - Apr 2022)</p>
-            <p class="text-sm text-indigo-200">Spearheaded development of an ERP for the education sector. Utilized .NET, C#, T-SQL, and RESTful APIs in an Agile environment. Full-stack work on WebGUI and ASP.NET MVC front-ends.</p>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <h4 class="text-xl font-extrabold text-white">.NET Developer</h4>
-            <p class="text-sm font-semibold text-indigo-300 mb-2">Watchtower (Aug 2014 - May 2018)</p>
-            <p class="text-sm text-indigo-200">Contributed to an internal ERP for 24k+ global users. Worked in 20+ Scrum teams, focusing on Document Management and Accounting modules using C#, WPF, and SQL Server. Practiced TDD, BDD, and DDD.</p>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <h4 class="text-xl font-extrabold text-white">.NET Developer</h4>
-            <p class="text-sm font-semibold text-indigo-300 mb-2">Wolters Kluwer (Jan 2013 - Aug 2014)</p>
-            <p class="text-sm text-indigo-200">Developed a comprehensive ERP for law firms adopted by 10,000+ lawyers. Built case management and accounting (journal entry, reconciliation) modules from the ground up.</p>
+          <div class="grid md:grid-cols-3 gap-8 text-center">
+            <div style="transition-delay:.1s">
+              <div class="stat-number">10+</div>
+              <p classs="text-lg text-indigo-200 font-semibold mt-2">Years of Experience</p>
+              <p class="text-sm text-indigo-300/80">Tackling challenging projects of all sizes.</p>
+            </div>
+            <div style="transition-delay:.2s">
+              <div class="stat-number">24k</div>
+              <p class="text-lg text-indigo-200 font-semibold mt-2">Global ERP Users</p>
+              <p class="text-sm text-indigo-300/80">Developed core modules.</p>
+            </div>
+            <div style="transition-delay:.3s">
+              <div class="stat-number">10k+</div>
+              <p class="text-lg text-indigo-200 font-semibold mt-2">Legal Professionals</p>
+              <p class="text-sm text-indigo-300/80">Used the ERP built at Wolters Kluwer.</p>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div class="reveal">
-          <h3 class="text-2xl text-white text-center font-bold mb-6">Core Tech Stack</h3>
-          <div class="flex flex-wrap justify-center gap-3">
-            <span class="tech-tag">C#</span>
-            <span class="tech-tag">.NET Core & Framework</span>
-            <span class="tech-tag">ASP.NET MVC & Core</span>
-            <span class="tech-tag">T-SQL</span>
-            <span class="tech-tag">Microsoft SQL Server</span>
-            <span class="tech-tag">Entity Framework</span>
-            <span class="tech-tag">Vue.js</span>
-            <span class="tech-tag">JavaScript & jQuery</span>
-            <span class="tech-tag">Bootstrap</span>
-            <span class="tech-tag">WPF & XAML</span>
-            <span class="tech-tag">REST APIs</span>
-            <span class="tech-tag">Git & TFS</span>
-            <span class="tech-tag">Agile & Scrum</span>
+      <section>
+        <div class="section-glass reveal">
+          <div class="reveal">
+            <h2 class="section text-white text-center mb-4">Core Expertise</h2>
+            <p class="text-center text-indigo-200 max-w-2xl mx-auto mb-10">I deliver practical engineering that balances long-term quality with immediate business impact.</p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <article class="card reveal tilt" style="transition-delay:.1s">
+              <h3 class="text-xl font-bold text-white mb-2">Enterprise .NET Development</h3>
+              <p class="text-sm text-indigo-200">Deep experience with C#, ASP.NET Core, and the .NET ecosystem. Building and optimizing large-scale server applications and UIs.</p>
+            </article>
+
+            <article class="card reveal tilt" style="transition-delay:.2s">
+              <h3 class="text-xl font-bold text-white mb-2">Complex ERP & Legacy Systems</h3>
+              <p class="text-sm text-indigo-200">My specialty. I excel at navigating, debugging, and modernizing large, mission-critical codebases (ERP, DMS, Accounting) without breaking workflows.</p>
+            </article>
+
+            <article class="card reveal tilt" style="transition-delay:.3s">
+              <h3 class="text-xl font-bold text-white mb-2">Database & Performance</h3>
+              <p class="text-sm text-indigo-200">Expert in T-SQL and Microsoft SQL Server. I design robust data models, optimize complex queries, and tune performance for high-volume systems.</p>
+            </article>
           </div>
         </div>
+      </section>
 
-      </div>
-    </section>
 
-    <section class="py-28 px-6 text-center">
-      <div class="max-w-3xl mx-auto reveal">
-        <h2 class="section text-white mb-6">Ready to Move Your Project Forward?</h2>
-        <p class="text-indigo-200 text-lg max-w-2xl mx-auto mb-10">Looking for an experienced .NET developer who can handle complexity and deliver reliable solutions? Let's connect and discuss how I can help strengthen your team.</p>
+      <section>
+        <div class="section-glass reveal">
+          <h2 class="section text-white text-center mb-4">What My Colleagues Say</h2>
+          <p class="text-center text-indigo-200 max-w-2xl mx-auto mb-10">Real feedback from managers, peers, and stakeholders.</p>
 
-        <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4 max-w-lg mx-auto mb-10 text-left">
-          <ul class="text-indigo-200 space-y-2">
-            <li class="flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-cyan-400 flex-shrink-0"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
-              Taking ownership
-            </li>
-            <li class="flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-cyan-400 flex-shrink-0"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
-              Bringing solutions, not problems
-            </li>
-          </ul>
-           <ul class="text-indigo-200 space-y-2">
-            <li class="flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-cyan-400 flex-shrink-0"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
-              Clear & consistent communication
-            </li>
-            <li class="flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-cyan-400 flex-shrink-0"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
-              Writing maintainable code
-            </li>
-          </ul>
+          <div class="grid md:grid-cols-2 gap-6">
+            <blockquote class="glass reveal p-8" style="transition-delay:.1s">
+              <p class="text-indigo-100 mb-6 italic">"I worked with Bruno on **very large projects with millions of users**. Not only was he very good at the job on a technical level, but he was also a pleasure to work with. He's **customer-centric and shows great empathy**. I'm sure he'll make any project a success!"</p>
+              <footer class="font-semibold text-white">
+                Justin Frébault
+                <span class="block text-sm font-normal text-indigo-300">Boutique Data Consultant</span>
+              </footer>
+            </blockquote>
+
+            <blockquote class="glass reveal p-8" style="transition-delay:.2s">
+              <p class="text-indigo-100 mb-6 italic">"Bruno is the kind of collaborator **you can count on**. His technical skills are indisputable, but his human qualities make him invaluable. He always studies subjects deeply and is **great at putting himself in the client’s shoes** to ensure their satisfaction. I would recommend him to anyone!"</p>
+              <footer class="font-semibold text-white">
+                Stéphane Henry
+                <span class="block text-sm font-normal text-indigo-300">Technical Director</span>
+              </footer>
+            </blockquote>
+
+            <blockquote class="glass reveal p-8" style="transition-delay:.3s">
+              <p class="text-indigo-100 mb-6 italic">"Bruno **perfectly masters his development and design skills** and is curious to understand the business. To be a technical expert who is also curious about the business is precious because it is rare... He has exceptional interpersonal skills, works well alone or in a team, and shares his knowledge. An **outstanding collaborator** whom I recommend without any reservation."</p>
+              <footer class="font-semibold text-white">
+                Isabelle Geneste
+                <span class="block text-sm font-normal text-indigo-300">CEO & Founder</span>
+              </footer>
+            </blockquote>
+
+            <blockquote class="glass reveal p-8" style="transition-delay:.4s">
+              <p class="text-indigo-100 mb-6 italic">"Bruno is serious, makes **quality code**, and **communicates very well**. He thrives in both technical and human aspects. The collaboration was excellent. I hope we will have the opportunity to work together again!"</p>
+              <footer class="font-semibold text-white">
+                Florian Alleaume
+                <span class="block text-sm font-normal text-indigo-300">Project Management Team Lead</span>
+              </footer>
+            </blockquote>
+          </div>
         </div>
+      </section>
 
-        <div class="flex items-center justify-center gap-4">
-          <a class="cta" href="https://www.linkedin.com/in/bruno-decarnoncle">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" fill="#fff"/></svg>
-            <span>Connect on LinkedIn</span>
-          </a>
+      <section>
+        <div class="section-glass max-w-4xl mx-auto reveal">
+          <h2 class="section text-white text-center mb-12">Career & Technology</h2>
+          
+          <div class="mb-20">
+            <div class="timeline-item reveal">
+              <div class="timeline-dot"></div>
+              <h4 class="text-xl font-extrabold text-white">Senior .NET Developer</h4>
+              <p class="text-sm font-semibold text-indigo-300 mb-2">Self-Employed (Apr 2022 - Present)</p>
+              <p class="text-sm text-indigo-200">Developed and optimized a large-scale website using ASP.NET MVC, .NET Core, and Vue.js. Focused on performance, complex authorization, and API enhancements.</p>
+            </div>
+
+            <div class="timeline-item reveal">
+              <div class="timeline-dot"></div>
+              <h4 class="text-xl font-extrabold text-white">Senior .NET Developer</h4>
+              <p class="text-sm font-semibold text-indigo-300 mb-2">aimaira (May 2018 - Apr 2022)</p>
+              <p class="text-sm text-indigo-200">Spearheaded development of an ERP for the education sector. Utilized .NET, C#, T-SQL, and RESTful APIs in an Agile environment. Full-stack work on WebGUI and ASP.NET MVC front-ends.</p>
+            </div>
+
+            <div class="timeline-item reveal">
+              <div class="timeline-dot"></div>
+              <h4 class="text-xl font-extrabold text-white">.NET Developer</h4>
+              <p class="text-sm font-semibold text-indigo-300 mb-2">Watchtower (Aug 2014 - May 2018)</p>
+              <p class="text-sm text-indigo-200">Contributed to an internal ERP for 24k+ global users. Worked in 20+ Scrum teams, focusing on Document Management and Accounting modules using C#, WPF, and SQL Server. Practiced TDD, BDD, and DDD.</p>
+            </div>
+
+            <div class="timeline-item reveal">
+              <div class="timeline-dot"></div>
+              <h4 class="text-xl font-extrabold text-white">.NET Developer</h4>
+              <p class="text-sm font-semibold text-indigo-300 mb-2">Wolters Kluwer (Jan 2013 - Aug 2014)</p>
+              <p class="text-sm text-indigo-200">Developed a comprehensive ERP for law firms adopted by 10,000+ lawyers. Built case management and accounting (journal entry, reconciliation) modules from the ground up.</p>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <h3 class="text-2xl text-white text-center font-bold mb-6">Core Tech Stack</h3>
+            <div class="flex flex-wrap justify-center gap-3">
+              <span class="tech-tag">C#</span>
+              <span class="tech-tag">.NET Core & Framework</span>
+              <span class="tech-tag">ASP.NET MVC & Core</span>
+              <span class="tech-tag">T-SQL</span>
+              <span class="tech-tag">Microsoft SQL Server</span>
+              <span class="tech-tag">Entity Framework</span>
+              <span class="tech-tag">Vue.js</span>
+              <span class="tech-tag">JavaScript & jQuery</span>
+              <span class="tech-tag">Bootstrap</span>
+              <span class="tech-tag">WPF & XAML</span>
+              <span class="tech-tag">REST APIs</span>
+              <span class="tech-tag">Git & TFS</span>
+              <span class="tech-tag">Agile & Scrum</span>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-  </main>
+      <section>
+        <div class="section-glass max-w-3xl mx-auto reveal text-center">
+          <h2 class="section text-white mb-6">Ready to Move Your Project Forward?</h2>
+          <p class="text-indigo-200 text-lg max-w-2xl mx-auto mb-10">Looking for an experienced .NET developer who can handle complexity and deliver reliable solutions? Let's connect and discuss how I can help strengthen your team.</p>
 
-  <footer class="py-8 text-center text-sm text-indigo-300/80">
+          <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4 max-w-lg mx-auto mb-10 text-left">
+            <ul class="text-indigo-200 space-y-2">
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-cyan-400 flex-shrink-0"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                Taking ownership
+              </li>
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-cyan-400 flex-shrink-0"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                Bringing solutions, not problems
+              </li>
+            </ul>
+             <ul class="text-indigo-200 space-y-2">
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-cyan-400 flex-shrink-0"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                Clear & consistent communication
+              </li>
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-cyan-400 flex-shrink-0"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                Writing maintainable code
+              </li>
+            </ul>
+          </div>
+
+          <div class="flex items-center justify-center gap-4">
+            <a class="cta" href="https://www.linkedin.com/in/bruno-decarnoncle">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" fill="#fff"/></svg>
+              <span>Connect on LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div> </main>
+
+  <footer class="py-16 text-center text-sm text-indigo-300/80">
     © 2025 Bruno Decarnoncle • Senior .NET Developer
   </footer>
 
